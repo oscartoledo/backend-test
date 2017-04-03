@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails backend-test: production" uuid="e1ba5be2-4baa-4e40-afcd-0bfc9c0e2e52">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails backend-test: test" uuid="7ecec95d-38e5-4fe3-9cee-86a8014e2e8f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails backend-test: development" uuid="f7a501b6-583f-4a42-bd18-3b1e8cbb7a19">
+    <database-info product="PostgreSQL" version="9.5.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.5">
+      <database id="1" name="backend-test_development"/>
+      <schema id="2" parent="1" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-timestamp>2017-04-03.11:53:17.620</introspection-timestamp>
+      </schema>
+    </database-model>
+  </data-source>
+</component>
