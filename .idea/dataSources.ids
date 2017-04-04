@@ -16,8 +16,24 @@
       <schema id="2" parent="1" name="public">
         <object-id>2200</object-id>
         <comment>standard public schema</comment>
-        <introspection-timestamp>2017-04-03.11:53:17.620</introspection-timestamp>
+        <introspection-state-number>175148</introspection-state-number>
+        <introspection-timestamp>2017-04-03.21:29:36.682</introspection-timestamp>
       </schema>
+      <table id="3" parent="2" name="schema_migrations">
+        <object-id>66555</object-id>
+        <state-number>175147</state-number>
+      </table>
+      <column id="4" parent="3" name="version">
+        <state-number>175147</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="5" parent="3" name="unique_schema_migrations">
+        <object-id>66561</object-id>
+        <columns>version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
     </database-model>
   </data-source>
 </component>
