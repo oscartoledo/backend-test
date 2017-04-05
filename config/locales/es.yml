@@ -19,7 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+es:
   event: "Event"
-  twitter_share: "Twit this Event"
-  view: "View"
+  twitter_share: "Twit este Evento"
+  view: "Ver"
