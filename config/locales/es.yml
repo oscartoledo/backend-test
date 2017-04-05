@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
-  event: "Event"
+  event: "Evento"
+  events: "Eventos"
   twitter_share: "Twit este Evento"
   view: "Ver"
+  date: "Fecha"
+  time: "Hora"
+  price: "Precio"

@@ -21,5 +21,9 @@
 
 en:
   event: "Event"
+  events: "Events"
   twitter_share: "Twit this Event"
   view: "View"
+  date: "Date"
+  time: "Time"
+  price: "Price"
