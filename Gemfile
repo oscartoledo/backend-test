@@ -27,7 +27,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # Use to attach file to active record
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+# gem 'paperclip', '~> 4.3', '>= 4.3.6'
+
+# Bootstrap dependencies
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails', '~> 6.7', '>= 6.7.7.1'
+
+# Font awesome
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
