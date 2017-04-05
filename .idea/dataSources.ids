@@ -16,19 +16,138 @@
       <schema id="2" parent="1" name="public">
         <object-id>2200</object-id>
         <comment>standard public schema</comment>
-        <introspection-state-number>175148</introspection-state-number>
-        <introspection-timestamp>2017-04-03.21:29:36.682</introspection-timestamp>
+        <introspection-state-number>175155</introspection-state-number>
+        <introspection-timestamp>2017-04-04.08:51:32.925</introspection-timestamp>
       </schema>
-      <table id="3" parent="2" name="schema_migrations">
+      <sequence id="3" parent="2" name="billboards_id_seq">
+        <object-id>66572</object-id>
+        <state-number>175151</state-number>
+      </sequence>
+      <sequence id="4" parent="2" name="events_id_seq">
+        <object-id>66615</object-id>
+        <state-number>175155</state-number>
+      </sequence>
+      <table id="5" parent="2" name="billboards">
+        <object-id>66574</object-id>
+        <state-number>175155</state-number>
+      </table>
+      <table id="6" parent="2" name="events">
+        <object-id>66617</object-id>
+        <state-number>175155</state-number>
+      </table>
+      <table id="7" parent="2" name="schema_migrations">
         <object-id>66555</object-id>
         <state-number>175147</state-number>
       </table>
-      <column id="4" parent="3" name="version">
+      <column id="8" parent="5" name="id">
+        <state-number>175151</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;billboards_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="9" parent="5" name="show_date">
+        <state-number>175151</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="10" parent="5" name="premier">
+        <state-number>175151</state-number>
+        <data-type>boolean</data-type>
+        <default-expression>false</default-expression>
+      </column>
+      <column id="11" parent="5" name="sold_out">
+        <state-number>175151</state-number>
+        <data-type>boolean</data-type>
+        <default-expression>false</default-expression>
+      </column>
+      <column id="12" parent="5" name="price">
+        <state-number>175151</state-number>
+        <mandatory>1</mandatory>
+        <data-type>double precision</data-type>
+      </column>
+      <column id="13" parent="5" name="created_at">
+        <state-number>175151</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="14" parent="5" name="updated_at">
+        <state-number>175151</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="15" parent="5" name="event_id">
+        <state-number>175155</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <index id="16" parent="5" name="billboards_pkey">
+        <object-id>66580</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="17" parent="5" name="index_billboards_on_event_id">
+        <object-id>66626</object-id>
+        <columns>event_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="18" parent="5" name="billboards_pkey">
+        <columns>id</columns>
+        <underlying-index>billboards_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="19" parent="6" name="id">
+        <state-number>175155</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;events_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="20" parent="6" name="name">
+        <state-number>175155</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="21" parent="6" name="description">
+        <state-number>175155</state-number>
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="22" parent="6" name="location">
+        <state-number>175155</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="23" parent="6" name="picture_url">
+        <state-number>175155</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="24" parent="6" name="created_at">
+        <state-number>175155</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="25" parent="6" name="updated_at">
+        <state-number>175155</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="26" parent="6" name="events_pkey">
+        <object-id>66624</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="27" parent="6" name="events_pkey">
+        <columns>id</columns>
+        <underlying-index>events_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="28" parent="7" name="version">
         <state-number>175147</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar</data-type>
       </column>
-      <index id="5" parent="3" name="unique_schema_migrations">
+      <index id="29" parent="7" name="unique_schema_migrations">
         <object-id>66561</object-id>
         <columns>version</columns>
         <desc-columns></desc-columns>

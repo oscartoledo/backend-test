@@ -55,5 +55,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :events
+  resources :events do
+    collection do
+      get 'billboard' => :list
+    end
+  end
 end
