@@ -36,6 +36,13 @@ gem 'autoprefixer-rails', '~> 6.7', '>= 6.7.7.1'
 # Font awesome
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 
+# Datetime Picker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
+# Security
+gem 'devise', '~> 4.2', '>= 4.2.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
