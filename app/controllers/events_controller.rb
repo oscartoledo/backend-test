@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_featured_events, only: [:list]
 
   def index
     @events = Event.all
@@ -46,5 +47,10 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find params[:id]
+  end
+
+  def set_featured_events
+    now = DateTime.now
+    @featured_billboards = Billboard.joins(:event).where(show_date: now.beginning_of_day..now.end_of_day, events: {featured: true})
   end
 end

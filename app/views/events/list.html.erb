@@ -1,34 +1,39 @@
 <h1 class="text-capitalize"><%= t :event %></h1>
 <div class="row">
-  <% @billboards.each do |b| %>
-      <div class="col-xs-6 col-md-4 col-lg-3">
-        <div class="card card-inverse">
-          <img class="card-img img-responsive" src="<%= image_path b.event.picture_url %>" alt="<%= b.event.name%>" >
-          <div class="card-img-overlay">
-            <div class="card-title">
-              <div class="row">
-                <div class="col-xs-8"><h4><%= date_time_format b.show_date%></h4></div>
-                <div class="col-xs-4 text-right">
-                  <div class="dropdown">
-                    <button id="shared-dropdown" class="btn btn-link dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="true">
-                      <span class="fa fa-share-alt fa-2x"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="shared-dropdown">
-                      <li><a><span class="fa fa-twitter"></span><%=t :twitter_share %></a></li>
-                    </ul>
+  <div class="col-xs-8">
+    <% @billboards.each do |b| %>
+        <div class="col-xs-6 col-md-4 col-lg-3">
+          <div class="card card-inverse">
+            <img class="card-img img-responsive" src="<%= image_path b.event.picture_url %>" alt="<%= b.event.name%>" >
+            <div class="card-img-overlay">
+              <div class="card-title">
+                <div class="row">
+                  <div class="col-xs-8"><h4><%= date_time_format b.show_date%></h4></div>
+                  <div class="col-xs-4 text-right">
+                    <div class="dropdown">
+                      <button id="shared-dropdown" class="btn btn-link dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="true">
+                        <span class="fa fa-share-alt fa-2x"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="shared-dropdown">
+                        <li><a><span class="fa fa-twitter"></span><%=t :twitter_share %></a></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card-footer">
-            <div class="row">
-              <div class="col-xs-12">
-                <%= link_to t(:view) , event_path(b.event), class: "btn btn-info"%>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-xs-12">
+                  <%= link_to t(:view) , event_path(b.event), class: "btn btn-info"%>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+    <%= render :partial => 'featured_events', :locals => {:featured_billboards => @featured_billboards}  %>
+  </div>
 </div>
