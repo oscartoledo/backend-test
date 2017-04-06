@@ -16,4 +16,8 @@ module ApplicationHelper
     number_to_currency number, precision: 2
   end
 
+  def empty_img
+    'empty.jpg'
+  end
+
 end

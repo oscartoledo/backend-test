@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'events#index'
+  root 'events#list'
+
+  resources :events do
+    collection do
+      get 'billboard' => :list
+    end
+  end
+
+  devise_for :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -56,9 +63,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :events do
-    collection do
-      get 'billboard' => :list
-    end
-  end
 end

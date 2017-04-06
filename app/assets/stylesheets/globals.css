@@ -1,0 +1,11 @@
+input[type="checkbox"] {
+    margin: 0px;
+}
+
+.btn-circle {
+    border-radius: 50%;
+}
+
+.padding-10 {
+    padding: 10px;
+}

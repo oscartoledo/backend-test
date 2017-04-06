@@ -1,2 +1,11 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<div class="row bottom-separator">
+  <div class="col-xs-12">
+    <%= link_to events_path do %>
+        <span class="fa fa-arrow-circle-left fa-3x"></span> <span class="fa-3x"><%= t :events %></span>
+    <% end %>
+  </div>
+</div>
+<div class="row top-margin">
+  <%= render 'form' %>
+</div>
+

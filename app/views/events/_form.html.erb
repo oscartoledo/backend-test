@@ -1,0 +1,128 @@
+<%= form_for @event do |f_event| %>
+    <div class="col-xs-8">
+      <div class="row">
+        <div class="col-xs-12 form-group">
+          <%= f_event.text_field :name, class: "form-control input-lg", placeholder: t(:event_name) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 form-group">
+          <p><%= f_event.text_area :description, class: "form-control", placeholder: t(:event_description), rows: "15"  %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 form-group">
+      <div class="col-xs-12 form-group">
+        <div class="row input-group">
+          <%= f_event.text_field :picture_url, id: "image-url", class: "form-control", placeholder: t(:event_image_url) %>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" onclick="update_image();" ><span class="fa fa-refresh"></span></button>
+          </span>
+        </div>
+        <div class="row">
+          <img id="event-img-preview" class="img-thumbnail width-100" src="<%= image_path @event.picture_url.nil? ? empty_img : @event.picture_url %>" alt="<%= image_path @event.picture_url.nil? ? empty_img : @event.picture_url %>" >
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-xs-12">
+          <%= f_event.text_field :location, class: "form-control", placeholder: t(:event_location) %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-xs-1 text-center">
+          <%= f_event.check_box :featured %>
+        </div>
+        <div class="col-xs-11">
+          <%= t :featured %>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-xs-12 form-group">
+          <div class="row form-group text-right">
+            <button class="btn btn-default btn-circle" type="button" onclick="build_billboard();"><span class="fa fa-plus-circle"></span></button>
+          </div>
+          <table class="table table-striped table-condensed table-billboard">
+            <thead>
+            <td><%= t :date %></td>
+            <td><%= t :price %></td>
+            <td><%= t :premier %></td>
+            <td><%= t :sold_out %></td>
+            <td><%= t :actions %></td>
+            </thead>
+            <tbody>
+            <%= f_event.fields_for :billboards do |f_billboard| %>
+                <tr>
+                  <td>
+                    <div class="form-group">
+                      <div class='input-group date datetimepicker' id='datetimepicker1'>
+                        <%= f_billboard.text_field :show_date, class: "form-control", placeholder: t(:date) %>
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><%= f_billboard.number_field :price, class: "form-control", placeholder: t(:price) %> </td>
+                  <td class="text-center"><%= f_billboard.check_box :premier %> </td>
+                  <td class="text-center"><%= f_billboard.check_box :sold_out %> </td>
+                  <td class="text-center"><button class="btn btn-default btn-circle" type="button" onclick="remove_billboard(this)" ><span class="fa fa-close"></span></button></td>
+                </tr>
+            <% end if @event.billboards.any? %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row form-group text-right">
+        <%=  button_tag name: "commit", class: "btn btn-primary btn-circle" do %>
+            <span class="fa fa-floppy-o fa-3x padding-10"></span>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+<script type="text/javascript">
+  $(function () {
+    build_billboard();
+  });
+
+  function build_datetimes() {
+    $('.datetimepicker').datetimepicker({
+      format: 'YYYY-MM-DDTHH:mm'
+    });
+  }
+
+  function build_billboard() {
+    if(!$('.table-billboard tbody').html().trim().length) {
+      $('.table-billboard tbody').html($('.billboards-template').html());
+    } else {
+      $('.table-billboard tbody:last-child').append($('.billboards-template').html());
+    }
+    build_datetimes();
+  }
+
+  function remove_billboard(rm_btn) {
+    $(rm_btn).parent().parent().remove();
+  }
+
+  function update_image() {
+    var url = $('#image-url').val();
+    $('#event-img-preview').attr("src", url);
+  }
+</script>
+<script class="billboards-template" type="text/html">
+  <tr>
+    <td>
+      <div class="form-group">
+        <div class="input-group date datetimepicker" id="datetimepicker1">
+          <input class="form-control" placeholder="Date" type="text" name="event[billboards_attributes][][show_date]" id="event_billboards_attributes_show_date">
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+        </div>
+      </div>
+    </td>
+    <td><input class="form-control" placeholder="Price" type="number" name="event[billboards_attributes][][price]" id="event_billboards_attributes_price"> </td>
+    <td class="text-center"><input name="event[billboards_attributes][][premier]" type="hidden" value="0"><input type="checkbox" value="1" name="event[billboards_attributes][][premier]" id="event_billboards_attributes_premier"> </td>
+    <td class="text-center"><input name="event[billboards_attributes][][sold_out]" type="hidden" value="0"><input type="checkbox" value="1" name="event[billboards_attributes][][sold_out]" id="event_billboards_attributes_sold_out"> </td>
+    <td class="text-center"><button class="btn btn-default btn-circle" type="button" onclick="remove_billboard(this)" ><span class="fa fa-close"></span></button></td>
+  </tr>
+</script>

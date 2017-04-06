@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def index
     @events = Event.all
   end
@@ -9,7 +11,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    Event.create params
+    @event = Event.new (params[:event].to_hash)
+    if @event.save
+      redirect_to action: 'index'
+    else
+      render :new
+    end
   end
 
   def new
@@ -17,18 +24,27 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find params[:id]
   end
 
   def show
-    @event = Event.find params[:id]
   end
 
   def update
-    @event.update params
+    @event.update_attributes params[:event].to_hash
+    if @event.save
+      redirect_to action: 'index'
+    else
+      render :new
+    end
   end
 
   def destroy
     @event.destroy
+  end
+
+  private
+
+  def set_event
+    @event = Event.find params[:id]
   end
 end
