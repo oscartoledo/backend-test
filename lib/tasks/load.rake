@@ -16,6 +16,7 @@ namespace :load do
                  description: "Description for Event 2",
                  location: "Location for Event 2",
                  picture_url: "event2.jpeg",
+                 featured: false,
                  billboards_attributes: [
                      {show_date: DateTime.yesterday, premier: true, sold_out: false, price: 101.00},
                      {show_date: DateTime.yesterday, premier: false, sold_out: false, price: 101.00},
@@ -26,6 +27,7 @@ namespace :load do
                  description: "Description for Event 3",
                  location: "Location for Event 3",
                  picture_url: "event3.jpeg",
+                 featured: true,
                  billboards_attributes: [
                      {show_date: DateTime.tomorrow, premier: true, sold_out: false, price: 102.00},
                      {show_date: DateTime.tomorrow, premier: false, sold_out: false, price: 102.00},
@@ -36,6 +38,7 @@ namespace :load do
                  description: "Description for Event 4",
                  location: "Location for Event 4",
                  picture_url: "event4.jpeg",
+                 featured: true,
                  billboards_attributes: [
                      {show_date: DateTime.now + 2, premier: true, sold_out: false, price: 102.00},
                      {show_date: DateTime.now + 2, premier: false, sold_out: false, price: 102.00},

@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration
       t.column :description, :text, :null => false
       t.column :location, :string, :null => false
       t.column :picture_url, :string, :null => false
+      t.column :featured, :boolean, :default => false
 
       t.timestamps null: false
     end
