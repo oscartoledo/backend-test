@@ -13,3 +13,7 @@ input[type="checkbox"] {
 .border-top-10 {
     margin-top: 20px;
 }
+
+.container-fluid > h2 {
+    text-align: center;
+}
