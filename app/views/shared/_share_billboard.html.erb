@@ -1,0 +1,5 @@
+<a href="https://twitter.com/intent/tweet?text=<%=  t :tweet_message,  :event_name=> billboard.event.name,
+                                                      :event_date => date_time_format( billboard.show_date),
+                                                      :event_link => event_url(billboard.event) %>">
+  <span class="fa fa-twitter"></span><%=t :twitter_share %>
+</a>

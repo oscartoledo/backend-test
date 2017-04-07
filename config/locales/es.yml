@@ -37,3 +37,5 @@ es:
   edit: "Editar"
   actions: "Acciones"
   today_highlight: "Destacados de Hoy"
+
+  tweet_message: "Iré al #{event_name} @ #{event_date} #{event_link}"

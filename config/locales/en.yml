@@ -37,3 +37,5 @@ en:
   edit: "Edit"
   actions: "Actions"
   today_highlight: "Today Highlight"
+
+  tweet_message: "i will go %{event_name} @ %{event_date} %{event_link}"
