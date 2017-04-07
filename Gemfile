@@ -43,6 +43,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # Security
 gem 'devise', '~> 4.2', '>= 4.2.1'
 
+# Pagination
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

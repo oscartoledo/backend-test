@@ -1,9 +1,8 @@
 <h1 class="text-capitalize"><%= t :event %></h1>
-<div class="row text-center">
-
-</div>
 <div class="row">
   <div class="col-xs-8">
+    <%= render :partial => 'shared/pagination', :locals => {:objects => @billboards} %>
+    <div class="row text-center border-top-20">
     <% @billboards.each do |b| %>
         <div class="col-xs-6 col-md-4 col-lg-3">
           <div class="card card-inverse">
@@ -35,6 +34,8 @@
           </div>
         </div>
     <% end %>
+    </div>
+    <%= render :partial => 'shared/pagination', :locals => {:objects => @billboards} %>
   </div>
   <div class="col-xs-4">
     <%= render :partial => 'featured_events', :locals => {:featured_billboards => @featured_billboards}  %>
