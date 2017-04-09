@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_many :billboards, -> { order "show_date AS" }, class_name: "Billboard",
+  has_many :billboards, -> { order "show_date" }, class_name: "Billboard",
            inverse_of: :event, dependent: :destroy
   accepts_nested_attributes_for :billboards
 
