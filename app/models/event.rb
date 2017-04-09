@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-  has_many :billboards, inverse_of: :event
+  has_many :billboards, -> { order "show_date AS" }, class_name: "Billboard",
+           inverse_of: :event, dependent: :destroy
   accepts_nested_attributes_for :billboards
 
   validates :name, :description, :location, :picture_url, presence: true
