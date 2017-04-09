@@ -37,5 +37,11 @@ es:
   edit: "Editar"
   actions: "Acciones"
   today_highlight: "Destacados de Hoy"
+  name: "Nombre"
+  description: "Descripción"
+  location: "Lugar"
+  image_url: "URL de la Imágen"
 
   tweet_message: "Iré al #{event_name} @ #{event_date} #{event_link}"
+
+  msg_separator: ", "

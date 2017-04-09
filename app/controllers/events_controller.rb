@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :crete, :edit, :update, :destroy]
   before_action :set_featured_events, only: [:list]
 
   def index
@@ -16,9 +16,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new (params[:event].to_hash)
-    if @event.save
-      redirect_to action: 'index'
+    @event = Event.create params[:event].to_hash
+    if @event.valid? && @event.save
+      redirect_to action: :list
     else
       render :new
     end
@@ -36,10 +36,10 @@ class EventsController < ApplicationController
 
   def update
     @event.update_attributes params[:event].to_hash
-    if @event.save
-      redirect_to action: 'index'
+    if  @event.valid? && @event.save
+      redirect_to action: :index
     else
-      render :new
+      render :update
     end
   end
 
@@ -57,5 +57,9 @@ class EventsController < ApplicationController
     now = DateTime.now
     @featured_billboards = Billboard.joins(:event)
                                .where(show_date: now.beginning_of_day..now.end_of_day, events: {featured: true})
+  end
+
+  def validate_event
+    render :back unless @event.valid?
   end
 end
