@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   def list
     now = DateTime.now
     @billboards = Billboard.joins(:event)
-                      .where("show_date > ?", now)
+                      .where("show_date > ?", now.beginning_of_day)
                       .order("show_date ASC")
                       .paginate(:page => params[:page])
   end
@@ -39,7 +39,7 @@ class EventsController < ApplicationController
     if  @event.valid? && @event.save
       redirect_to action: :index
     else
-      render :update
+      render :edit
     end
   end
 
