@@ -17,3 +17,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
+
+$(function () {
+    $('.new_user').parent().addClass('text-center')
+});

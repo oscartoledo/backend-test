@@ -27,7 +27,7 @@
 </head>
 <body class="container-fluid">
 
-<%= render :partial => 'shared/navbar' %>
+<%= render :partial => 'shared/navbar' if user_login %>
 <div class="row">
   <div class="column-xs-12">
     <%= yield %>

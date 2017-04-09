@@ -41,6 +41,7 @@ es:
   description: "Descripción"
   location: "Lugar"
   image_url: "URL de la Imágen"
+  billboard: "Cartelera"
 
   tweet_message: "Iré al #{event_name} @ #{event_date} #{event_link}"
 

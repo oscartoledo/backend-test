@@ -33,10 +33,26 @@ input[type="checkbox"] {
     color: antiquewhite;
 }
 
+.background-transparent {
+    background: transparent;
+}
+
 .darken {
     background-image:
         linear-gradient(
                 rgba(0, 0, 0, 0.3),
                 rgba(0, 0, 0, 0.3)
         )
+}
+
+.field {
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+}
+
+div>label {
+    text-align: left !important;
 }

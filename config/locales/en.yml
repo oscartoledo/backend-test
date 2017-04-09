@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
+  app_name: "Backend Test"
+
   event: "Event"
   events: "Events"
   event_name: "Event Name"
@@ -36,11 +39,12 @@ en:
   featured: "Featured"
   edit: "Edit"
   actions: "Actions"
-  today_highlight: "Today Highlight"
+  today_highlight: "Today Highlights"
   name: "Name"
   description: "Description"
   location: "Location"
   image_url: "Image URL"
+  billboard: "Billboard"
 
   tweet_message: "i will go %{event_name} @ %{event_date} %{event_link}"
 
