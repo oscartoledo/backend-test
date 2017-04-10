@@ -1,0 +1,32 @@
+<h1 class="text-capitalize"><%= :events %></h1>
+<div class="row">
+  <div class="col-xs-12">
+    <%= render :partial => 'shared/pagination', :locals => {:objects => @billboards} %>
+    <div class="row text-center border-top-20">
+      <% @events.each do |e| %>
+        <div class="col-xs-6 col-md-4 col-lg-3">
+          <div class="card card-inverse">
+            <img class="card-img img-responsive" src="<%= image_path e.picture_url %>" alt="<%= e.name%>" >
+            <div class="card-img-overlay">
+              <div class="card-title">
+                <div class="row">
+                  <div class="col-xs-8"><h4><%= e.name%></h4></div>
+                  <div class="col-xs-4 text-right">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-xs-12 text-left">
+                  <%= link_to t(:edit) , edit_event_path(e), class: "btn btn-info"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= render :partial => 'shared/pagination', :locals => {:objects => @billboards} %>
+  </div>
+</div>

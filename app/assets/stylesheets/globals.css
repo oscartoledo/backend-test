@@ -1,0 +1,63 @@
+input[type="checkbox"] {
+    margin: 0px;
+}
+
+.btn-circle {
+    border-radius: 50%;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.border-top-10 {
+    margin-top: 20px;
+}
+
+.border-top-20 {
+    margin-top: 20px;
+}
+
+.container-fluid > h2 {
+    text-align: center;
+}
+
+.card-overlay-footer {
+    position: absolute;
+    bottom: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.color-white {
+    color: whitesmoke;
+}
+
+.background-transparent {
+    background: transparent;
+}
+
+.img-preview {
+    min-width: 230px;
+    min-height: 180px;
+}
+
+.darken {
+    background-image:
+        linear-gradient(
+                rgba(0, 0, 0, 0.3),
+                rgba(0, 0, 0, 0.3)
+        )
+}
+
+.field {
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+}
+
+div>label {
+    text-align: left !important;
+}

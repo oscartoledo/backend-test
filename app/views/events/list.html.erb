@@ -1,0 +1,48 @@
+<h1 class="text-capitalize"><%= t :events %></h1>
+<div class="row">
+  <div class="col-xs-8">
+    <%= render :partial => 'shared/pagination', :locals => {:objects => @billboards} %>
+    <div class="row text-center border-top-20">
+    <% @billboards.each do |b| %>
+        <div class="col-xs-6 col-md-4 col-lg-3">
+          <div class="card card-inverse">
+            <img class="card-img img-responsive" src="<%= image_path b.event.picture_url %>" alt="<%= b.event.name%>" >
+            <div class="card-img-overlay darken">
+              <div class="card-title">
+                <div class="row">
+                  <div class="col-xs-8"><h4><%= date_time_format b.show_date%></h4></div>
+                  <div class="col-xs-4 text-right">
+                    <div class="dropdown">
+                      <button id="shared-dropdown" class="btn btn-link dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="true">
+                        <span class="fa fa-share-alt fa-2x color-white"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="shared-dropdown">
+                        <li><%= render :partial => 'shared/share_billboard', :locals => {:billboard => b} %></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row card-overlay-footer">
+                  <div class="column-xs-12">
+                    <h4 class="color-white"><%= b.event.name %></h4>
+                  </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-xs-12 text-left">
+                  <%= link_to t(:view) , event_path(b.event), class: "btn btn-info"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+    </div>
+    <%= render :partial => 'shared/pagination', :locals => {:objects => @billboards} %>
+  </div>
+  <div class="col-xs-4">
+    <%= render :partial => 'featured_events', :locals => {:featured_billboards => @featured_billboards}  %>
+  </div>
+</div>

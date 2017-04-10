@@ -1,0 +1,36 @@
+<div class="row bottom-separator">
+  <h2><%= t :today_highlight %></h2>
+</div>
+<div class="row border-top-10">
+  <% featured_billboards.each do |fb| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-xs-2">
+        <img id="event-img-preview" class="img-thumbnail width-100 img-responsive" src="<%= image_path fb.event.picture_url.nil? ? empty_img : fb.event.picture_url %>" alt="<%= image_path fb.event.picture_url.nil? ? empty_img : fb.event.picture_url %>" >
+      </div>
+      <div class="col-xs-10">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3><%= fb.event.name %><span class="label label-default location-label"><%= date_time_format fb.show_date %></span></h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= fb.event.description %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 text-right">
+            <%= fb.event.location %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="row border-top-10 text-right">
+  <%= link_to new_event_path, class: "btn btn-primary btn-circle" do%>
+      <span class="fa fa-plus fa-3x padding-10"></span>
+  <% end %>
+</div>

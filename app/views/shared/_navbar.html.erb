@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="column-xs-12">
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to t(:app_name), billboard_events_path, class: "navbar-brand" %>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><%= link_to t(:billboard), billboard_events_path %></li>
+            <li><%= link_to t(:events), events_path %></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><p class="navbar-text"><%= current_user.email %></p></li>
+            <li>
+              <%=  button_to destroy_user_session_path, class: "btn navbar-btn background-transparent", method: :delete do %>
+                <span class="fa fa-power-off"></span>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+</div>

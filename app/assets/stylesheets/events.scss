@@ -1,0 +1,26 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-title {
+  position: absolute;
+  padding-left: 10px;
+  color: white;
+}
+
+.bottom-separator {
+  border-bottom: 2px solid;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
+
+.label-default.location-label {
+  background: transparent;
+  color: inherit;
+}
+
+.width-100 {
+  width: 100%;
+}
