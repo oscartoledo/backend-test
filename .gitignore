@@ -14,3 +14,5 @@
 .idea/dataSources.local.xml
 .idea/workspace.xml
 /.idea/*
+/Gemfile.lock
+/db/schema.rb
