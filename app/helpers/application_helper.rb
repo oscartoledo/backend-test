@@ -20,12 +20,4 @@ module ApplicationHelper
     'empty.jpg'
   end
 
-  def autenticated_user
-    Devise.mappings.keys.map { |s| warden.user(scope: s, run_callbacks: false) }[0]
-  end
-
-  def user_login
-    !autenticated_user.nil?
-  end
-
 end
