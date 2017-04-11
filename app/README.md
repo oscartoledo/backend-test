@@ -1,6 +1,6 @@
-#Backend Test
+# Backend Test
 
-##Intrucciones para el Despliegue
+## Intrucciones para el Despliegue
 
 * Para el despliegue de la aplicación de debe crear una base de datos en PostgreSQL 9.x con nombre ```backend-test_development``` y estar asignada al usuario "postgres" con contraseña "postgres" sin las ""
 * En el directorio raíz de la Aplicación (backend-test)
